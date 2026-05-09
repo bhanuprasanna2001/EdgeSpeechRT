@@ -4,6 +4,15 @@
 
 ---
 
+<table>
+  <tr>
+    <td align="center"><img src="assets/spectrograms/p232_080_edgespeech_comparison.png" alt="EdgeSpeech-RT spectrogram comparison" width="100%"/></td>
+    <td align="center"><img src="assets/spectrograms/p232_080_gtcrn_comparison.png" alt="GTCRN spectrogram comparison" width="100%"/></td>
+  </tr>
+</table>
+
+---
+
 ## What This Project Does
 
 Background noise ruins calls and recordings. This project builds a complete pipeline to remove that noise in **real time**, running fast enough for live use on a laptop CPU or a microcontroller — no GPU needed.
