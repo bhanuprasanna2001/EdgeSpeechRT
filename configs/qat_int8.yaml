@@ -1,0 +1,8 @@
+extends: gtcrn_base.yaml
+checkpoint: artifacts/edgespeech_rt_qat.pt
+output_path: artifacts/edgespeech_rt_qat.onnx
+qat:
+  epochs: 3
+  learning_rate: 0.0003
+  fake_quant: true
+  synthetic_batches: 64

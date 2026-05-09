@@ -1,0 +1,4 @@
+model,threads,frames,mean_ms,p50_ms,p95_ms,rtf
+artifacts/edgespeech_rt_fp32.onnx,1,500,0.0184,0.0175,0.0208,0.00092
+artifacts/edgespeech_rt_int8_dynamic.onnx,1,500,0.0170,0.0166,0.0193,0.00085
+artifacts/edgespeech_rt_int8_static.onnx,1,500,0.0209,0.0205,0.0218,0.00105

@@ -1,0 +1,11 @@
+model_path: artifacts/edgespeech_rt_fp32.onnx
+output_path: artifacts/edgespeech_rt_int8_static.onnx
+quantization:
+  mode: static
+  format: qdq
+  weight_type: qint8
+  activation_type: qint8
+calibration:
+  frames: 256
+  seed: 1337
+  data_dir: datasets/vctk-demand/raw/noisy_trainset_28spk_wav

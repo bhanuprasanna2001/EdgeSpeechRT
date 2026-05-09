@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "edgespeech-rt"
+version = "0.1.0"
+description = "Quantized C++/ONNX Runtime SDK for real-time speech enhancement."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "matplotlib",
+  "numpy",
+  "onnx",
+  "onnxruntime",
+  "pesq",
+  "pystoi",
+  "PyYAML",
+  "scipy",
+  "soundfile",
+  "torch",
+  "torchaudio",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.setuptools]
+package-dir = {"" = "python"}
+
+[tool.setuptools.packages.find]
+where = ["python"]
+
+[tool.pytest.ini_options]
+pythonpath = ["python"]
+testpaths = ["tests"]
+addopts = "-q"

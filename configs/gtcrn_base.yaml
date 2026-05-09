@@ -1,0 +1,19 @@
+sample_rate: 16000
+n_fft: 512
+window_size: 512
+hop_size: 320
+num_bins: 257
+hidden_size: 48
+model:
+  name: streaming_gtcrn_style_masker
+  causal: true
+  input: log1p_magnitude
+  recurrent_state: gru_hidden
+training:
+  seed: 1337
+  learning_rate: 0.0008
+  batch_size: 8
+  epochs: 12
+export:
+  opset: 17
+  output: artifacts/edgespeech_rt_fp32.onnx
