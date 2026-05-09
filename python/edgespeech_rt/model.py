@@ -83,7 +83,7 @@ def count_parameters(model: nn.Module) -> int:
 
 
 def estimate_macs_per_second(
-    config: MaskNetConfig, sample_rate: int = 16000, hop_size: int = 320
+    config: MaskNetConfig, sample_rate: int = 16000, hop_size: int = 256
 ) -> int:
     """Rough dense-layer/GRU MAC estimate for the model at streaming rate."""
 

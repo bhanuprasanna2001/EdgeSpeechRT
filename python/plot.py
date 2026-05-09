@@ -56,7 +56,7 @@ def plot_metrics(args: argparse.Namespace) -> None:
     save(fig, args.output)
 
 
-def spectrogram_db(samples: np.ndarray, sample_rate: int = 16000, n_fft: int = 512, hop_size: int = 320) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+def spectrogram_db(samples: np.ndarray, sample_rate: int = 16000, n_fft: int = 512, hop_size: int = 256) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
     freqs, times, spec = stft(
         samples,
         fs=sample_rate,

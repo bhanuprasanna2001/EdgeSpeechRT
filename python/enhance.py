@@ -20,7 +20,7 @@ def enhance_onnx(
     session: ort.InferenceSession,
     hidden_size: int = 48,
     n_fft: int = 512,
-    hop_size: int = 320,
+    hop_size: int = 256,
 ) -> torch.Tensor:
     if waveform.ndim == 1:
         waveform = waveform.unsqueeze(0)
@@ -44,7 +44,7 @@ def main() -> None:
     parser.add_argument("--max-files", type=int, default=None)
     parser.add_argument("--hidden-size", type=int, default=48)
     parser.add_argument("--n-fft", type=int, default=512)
-    parser.add_argument("--hop-size", type=int, default=320)
+    parser.add_argument("--hop-size", type=int, default=256)
     args = parser.parse_args()
 
     if bool(args.checkpoint) == bool(args.onnx):

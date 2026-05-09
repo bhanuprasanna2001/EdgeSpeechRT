@@ -1,0 +1,4 @@
+model,n_files,pesq,stoi,si_sdr
+Noisy,824,1.9668,0.9211,8.4494
+EdgeSpeech-RT (ours),824,2.4802,0.9279,17.1538
+GTCRN (pretrained),824,2.8547,0.9405,18.7965

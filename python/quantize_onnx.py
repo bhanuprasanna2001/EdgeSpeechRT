@@ -50,7 +50,7 @@ class WavSpectralCalibrationReader(CalibrationDataReader):
         max_frames_per_file: int = 16,
         hidden_size: int = 48,
         n_fft: int = 512,
-        hop_size: int = 320,
+        hop_size: int = 256,
     ) -> None:
         self._hidden_size = hidden_size
         self._features: list[np.ndarray] = []
@@ -84,7 +84,7 @@ def main() -> None:
     parser.add_argument("--calibration-max-files", type=int, default=16)
     parser.add_argument("--hidden-size", type=int, default=48)
     parser.add_argument("--n-fft", type=int, default=512)
-    parser.add_argument("--hop-size", type=int, default=320)
+    parser.add_argument("--hop-size", type=int, default=256)
     args = parser.parse_args()
 
     cfg = load_yaml(args.config)

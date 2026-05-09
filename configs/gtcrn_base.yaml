@@ -1,7 +1,7 @@
 sample_rate: 16000
 n_fft: 512
 window_size: 512
-hop_size: 320
+hop_size: 256
 num_bins: 257
 hidden_size: 48
 model:
@@ -12,8 +12,11 @@ model:
 training:
   seed: 1337
   learning_rate: 0.0008
-  batch_size: 8
-  epochs: 12
+  lr_min: 0.00001
+  batch_size: 16
+  epochs: 30
+  scheduler: CosineAnnealingLR
+  loss: HybridLoss
 export:
   opset: 17
   output: artifacts/edgespeech_rt_fp32.onnx

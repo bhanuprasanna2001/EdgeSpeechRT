@@ -14,7 +14,7 @@ def make_window(n_fft: int, device: torch.device | None = None) -> torch.Tensor:
 
 
 def stft_features(
-    waveform: torch.Tensor, n_fft: int = 512, hop_size: int = 320
+    waveform: torch.Tensor, n_fft: int = 512, hop_size: int = 256
 ) -> tuple[torch.Tensor, torch.Tensor]:
     """Return log-magnitude features and complex STFT for mono waveforms."""
 
@@ -39,13 +39,14 @@ def istft_overlap_add(
     spec: torch.Tensor,
     length: int,
     n_fft: int = 512,
-    hop_size: int = 320,
+    hop_size: int = 256,
     center: bool = True,
 ) -> torch.Tensor:
     """Inverse STFT using explicit overlap-add normalization.
 
-    This avoids backend-specific `torch.istft` NOLA checks for deployment hops
-    such as 512/320 while preserving the same analysis window convention.
+    Kept for C++ SDK compatibility and edge deployment where torch.istft
+    NOLA checks are unavailable. With hop_size=256 (50% overlap), this is
+    equivalent to torch.istft but runs identically on CPU, MPS, and in C++.
     """
 
     if spec.ndim != 3:
@@ -72,7 +73,7 @@ def enhance_waveform(
     model: StreamingGTCRNStyleMasker,
     waveform: torch.Tensor,
     n_fft: int = 512,
-    hop_size: int = 320,
+    hop_size: int = 256,
 ) -> torch.Tensor:
     """Enhance a waveform with the same mask contract used by the C++ SDK."""
 

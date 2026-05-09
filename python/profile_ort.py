@@ -50,7 +50,7 @@ def main() -> None:
 
     p50 = statistics.median(latencies)
     p95 = percentile(latencies, 95)
-    rtf = (statistics.mean(latencies) / 1000.0) / 0.020
+    rtf = (statistics.mean(latencies) / 1000.0) / 0.016  # 256-sample hop at 16 kHz = 16 ms
     row = {
         "model": args.model,
         "threads": args.threads,
