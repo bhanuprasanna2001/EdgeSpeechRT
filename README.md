@@ -6,6 +6,10 @@
 
 <table>
   <tr>
+    <th align="center">EdgeSpeech-RT (ours) — 43,793 params · 173 KB</th>
+    <th align="center">GTCRN (reference) — 23,670 params</th>
+  </tr>
+  <tr>
     <td align="center"><img src="assets/spectrograms/p232_080_edgespeech_comparison.png" alt="EdgeSpeech-RT spectrogram comparison" width="100%"/></td>
     <td align="center"><img src="assets/spectrograms/p232_080_gtcrn_comparison.png" alt="GTCRN spectrogram comparison" width="100%"/></td>
   </tr>
